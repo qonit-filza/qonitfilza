@@ -1,61 +1,118 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  animatedImage: string;
 }
 
-const { href, title, body } = Astro.props;
+const { id, title, description, image, animatedImage } = Astro.props;
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div
+  class="shadow-ctc group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col border border-slate-600 p-4 font-mono hover:-translate-x-1 hover:-translate-y-1 hover:border-4 hover:border-black hover:shadow-retro"
+>
+  <img
+    class="aspect-[144/77] border object-cover grayscale group-hover:grayscale-0"
+    src={image}
+  />
+
+  <div class="py-4">
+    <p class="text-xl font-bold">{title}</p>
+    <p class="text-md font-sans">{description}</p>
+  </div>
+</div>
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .shadow-cta {
+    -webkit-transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    -o-transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+  }
+
+  .shadow-ctb {
+    -webkit-transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    -o-transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition-delay: 0s;
+  }
+
+  .shadow-ctb:hover {
+    transition-delay: 400ms;
+  }
+
+  .shadow-ctc {
+    -webkit-transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    -o-transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition-delay: 0s;
+  }
+
+  .shadow-ctd {
+    -webkit-transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    -o-transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition:
+      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
+      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
+    transition-delay: 0s;
+  }
+
+  .shadow-ctd:hover {
+    transition-delay: 200ms;
+  }
 </style>
