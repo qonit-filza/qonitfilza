@@ -10,16 +10,20 @@ const { title, description, image, slug } = Astro.props;
 ---
 
 <a
+  transition:name={"container-" + slug}
   href={`/portfolio/${slug}`}
   class="shadow-ctc group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col border border-slate-600 bg-white p-4 hover:-translate-x-1 hover:-translate-y-1 hover:border-4 hover:border-black hover:shadow-retro"
 >
   <img
+    transition:name={"image-" + slug}
     class="aspect-[144/77] border object-cover grayscale group-hover:grayscale-0"
     src={image}
   />
 
   <div class="py-4">
-    <p class="p-2 font-mono text-xl font-bold">{title}</p>
+    <p transition:name={"title-" + slug} class="font-mono text-xl font-bold">
+      {title}
+    </p>
     <p class="text-md font-sans">{description}</p>
   </div>
 </a>

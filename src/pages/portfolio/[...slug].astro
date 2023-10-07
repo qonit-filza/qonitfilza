@@ -14,8 +14,19 @@ const { Content } = await portfolio.render();
 ---
 
 <div class="bg-white p-10">
-  <div class="border-4 border-black shadow-retro">
+  <div
+    transition:name={"container-" + portfolio.slug}
+    class="border-4 border-black shadow-retro"
+  >
     <article class="prose prose-lg mx-auto py-10">
+      <img
+        transition:name={"image-" + portfolio.slug}
+        class="aspect-[144/77] w-full border border-slate-600 object-cover"
+        src={portfolio.data.image}
+      />
+      <h1 transition:name={"title-" + portfolio.slug}>
+        {portfolio.data.title}
+      </h1>
       <Content />
     </article>
   </div>
