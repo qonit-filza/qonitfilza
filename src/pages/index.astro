@@ -1,65 +1,9 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from "../layouts/Layout.astro";
 import Card from "@components/Card.astro";
 
-const projects = [
-  {
-    id: 1,
-    title: "esignees",
-    description: "Document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sample/esignees.png",
-    animatedImage: "",
-  },
-  {
-    id: 1,
-    title: "ECI Anniversary",
-    description: "Document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696514684/work-sample/eci-anniversary.png",
-    animatedImage: "",
-  },
-  {
-    id: 2,
-    title: "Merchant Landing Page",
-    description: "Seamless document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696515694/work-sample/eci-merchant.png",
-    animatedImage: "",
-  },
-  {
-    id: 2,
-    title: "Burgernomics.",
-    description: "Seamless document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696522392/work-sample/burgernomics.png",
-    animatedImage: "",
-  },
-  {
-    id: 2,
-    title: "UNIQGUE",
-    description: "Seamless document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696531060/work-sample/uniqgue.png",
-    animatedImage: "",
-  },
-  {
-    id: 2,
-    title: "UNIQGUE - CMS",
-    description: "Seamless document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696532524/work-sample/uniqgue-cms.png",
-    animatedImage: "",
-  },
-  {
-    id: 2,
-    title: "McDonald's Clone",
-    description: "Seamless document signing apps",
-    image:
-      "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696531060/work-sample/mcd-clone.png",
-    animatedImage: "",
-  },
-];
+const portfolios = (await getCollection('portfolio'))
 ---
 
 <Layout title="Welcome to Astro.">
@@ -70,7 +14,7 @@ const projects = [
     <h2 class="text-center font-sans text-2xl font-normal">- work sample -</h2>
 
     <section class="grid grid-cols-3 gap-5 pt-20">
-      {projects.map((project) => <Card {...project} />)}
+      {portfolios.map((portfolio) => <Card slug={portfolio.slug} {...portfolio.data} />)}
     </section>
   </main>
 </Layout>

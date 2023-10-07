@@ -7,10 +7,11 @@ interface Props {
   animatedImage: string;
 }
 
-const { id, title, description, image, animatedImage } = Astro.props;
+const { id, title, description, image, animatedImage, slug } = Astro.props;
 ---
 
-<div
+<a
+href={`/portfolio/${slug}`}
   class="shadow-ctc group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col border border-slate-600 p-4 font-mono hover:-translate-x-1 hover:-translate-y-1 hover:border-4 hover:border-black hover:shadow-retro"
 >
   <img
@@ -22,7 +23,7 @@ const { id, title, description, image, animatedImage } = Astro.props;
     <p class="text-xl font-bold">{title}</p>
     <p class="text-md font-sans">{description}</p>
   </div>
-</div>
+</a>
 
 <style>
   .shadow-cta {
