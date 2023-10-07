@@ -1,17 +1,16 @@
 ---
 interface Props {
-  id: number;
   title: string;
   description: string;
   image: string;
-  animatedImage: string;
+  slug: string;
 }
 
-const { id, title, description, image, animatedImage, slug } = Astro.props;
+const { title, description, image, slug } = Astro.props;
 ---
 
 <a
-href={`/portfolio/${slug}`}
+  href={`/portfolio/${slug}`}
   class="shadow-ctc group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col border border-slate-600 p-4 font-mono hover:-translate-x-1 hover:-translate-y-1 hover:border-4 hover:border-black hover:shadow-retro"
 >
   <img
@@ -20,7 +19,7 @@ href={`/portfolio/${slug}`}
   />
 
   <div class="py-4">
-    <p class="text-xl font-bold">{title}</p>
+    <p class="p-2 text-xl font-bold">{title}</p>
     <p class="text-md font-sans">{description}</p>
   </div>
 </a>
