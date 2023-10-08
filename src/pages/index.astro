@@ -3,13 +3,14 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
 
-const portfolios = await getCollection("portfolio");
+const data = await getCollection("portfolio");
+const portfolios = data.sort((a, b) => a.data.id - b.data.id);
 ---
 
 <Layout title="Welcome to Astro.">
   <main class="py-20">
-    <h1 class="font-ar-one text-center text-6xl font-semibold">qonitfilza</h1>
-    <h2 class="font-ar-one text-center text-2xl font-normal">work-sample</h2>
+    <h1 class="text-center font-ar-one text-6xl font-semibold">qonitfilza</h1>
+    <h2 class="text-center font-ar-one text-2xl font-normal">work-sample</h2>
 
     <section class="grid grid-cols-3 gap-5 pt-20">
       {
