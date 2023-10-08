@@ -6,8 +6,31 @@ description: "End-to-end platform to sign, request, and verify document's signat
 ---
 
 import ExternalLink from "@components/ExternalLink.astro";
+import Stack from "@components/Stack.astro";
+export const stacks = [
+  "TYPESCRIPT",
+  "REACT",
+  "VUE",
+  "REDUX",
+  "PINIA",
+  "TAILWIND CSS",
+  "EXPRESSJS",
+  "POSTGRESQL",
+  "SEQUELIZE",
+  "JEST",
+];
+export const collaborators = [
+  { name: "NABIL", github: "https://github.com/nabilusnup" },
+  { name: "GHAZY", github: "https://github.com/ghazytp" },
+  { name: "SAYYID", github: "https://github.com/hyuantheo" },
+  { name: "HARDY", github: "https://github.com/DaemoonX" },
+];
 
 <div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
+  <ExternalLink
+    text="Overview"
+    link="https://www.canva.com/design/DAFaC4cAWR4/K_DHzwX_4TdEzIP7KSwDUQ/view?utm_content=DAFaC4cAWR4&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+  />
   <ExternalLink text="Live Demo" link="https://esignees.web.app/" />
   <ExternalLink
     text="Github"
@@ -48,4 +71,15 @@ import ExternalLink from "@components/ExternalLink.astro";
     class=" mx-auto mb-0 border border-black"
     src="/img/esignees/payment.jpeg"
   />
+</div>
+
+<Stack techs={stacks} />
+
+<h2 class="not-prose mt-10 border-t-2 border-black pt-5 text-center font-ar-one text-2xl font-semibold">
+  COLLABORATOR
+</h2>
+<div class="text mx-auto flex w-3/4 flex-wrap justify-center gap-2 pt-5 font-roboto-mono text-sm">
+  {collaborators.map((c) => (
+    <a href={c.github}>{c.name}</a>
+  ))}
 </div>

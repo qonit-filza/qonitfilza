@@ -6,6 +6,15 @@ description: "Minimal product catalogue site equipped with search, filtering, pa
 ---
 
 import ExternalLink from "@components/ExternalLink.astro";
+import Stack from "@components/Stack.astro";
+export const stacks = [
+  "VUE",
+  "TAILWIND CSS",
+  "EXPRESSJS",
+  "POSTGRESQL",
+  "SEQUELIZE",
+  "JEST",
+];
 
 <div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
   <ExternalLink text="Live Demo" link="https://uniqgue-pub.web.app" />
@@ -19,3 +28,5 @@ import ExternalLink from "@components/ExternalLink.astro";
 </div>
 <img class=" mx-auto border border-black" src="/uniqgue-cms-preview.png" />
 <img class=" mx-auto border border-black" src="/uniqgue-cms-edit.png" />
+
+<Stack techs={stacks} />

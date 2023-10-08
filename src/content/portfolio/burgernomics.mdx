@@ -1,20 +1,42 @@
 ---
-layout: '@layouts/Layout.astro'
-title: 'Burgernomics'
-image: 'https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sample/burgernomics.png'
-description: 'Interactive dashboard showcasing countries economic data based on Big Mac Index'
+layout: "@layouts/Layout.astro"
+title: "Burgernomics"
+image: "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sample/burgernomics.png"
+description: "Interactive dashboard showcasing countries economic data based on Big Mac Index"
 ---
 
-import ExternalLink from '@components/ExternalLink.astro'
+import ExternalLink from "@components/ExternalLink.astro";
+import Stack from "@components/Stack.astro";
+export const stacks = [
+  "VUE",
+  "PINIA",
+  "TAILWIND CSS",
+  "EXPRESSJS",
+  "POSTGRESQL",
+  "SEQUELIZE",
+];
 
-<div class="mt-5 flex justify-end gap-2 not-prose border-b-2 border-black pb-8">
-          <ExternalLink text="Live Demo" link="https://burgernomics-4ec88.web.app/" />
-          <ExternalLink text="Github" link="https://github.com/qonit-filza/burgernomics" />
+<div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
+  <ExternalLink text="Live Demo" link="https://burgernomics-4ec88.web.app/" />
+  <ExternalLink
+    text="Github"
+    link="https://github.com/qonit-filza/burgernomics"
+  />
 </div>
 
 <div class="grid grid-cols-2 gap-10">
-    <img class=" mx-auto border border-black mb-0" src="/img/burgernomics/big-mac-index.png" />
-    <img class=" mx-auto border border-black mb-0" src="/img/burgernomics/info.png" />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/burgernomics/big-mac-index.png"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/burgernomics/info.png"
+  />
 </div>
-    <img class=" mx-auto border border-black " src="/img/burgernomics/work-hour.png" />
+<img
+  class=" mx-auto border border-black "
+  src="/img/burgernomics/work-hour.png"
+/>
 
+<Stack techs={stacks} />

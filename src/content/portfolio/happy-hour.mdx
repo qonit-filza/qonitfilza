@@ -5,6 +5,21 @@ image: "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sampl
 description: "Countdown microsite used for app web view. Open the gift box on the specified period and get special voucher"
 ---
 
-<div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
-  {/*  */}
+import Stack from "@components/Stack.astro";
+export const stacks = [
+  "NEXTJS",
+  "REACT",
+  "TYPESCRIPT",
+  "TAILWIND CSS",
+
+];
+
+<Stack techs={stacks} />
+
+<h2 class="not-prose mt-10 border-t-2 border-black pt-5 text-center font-ar-one text-2xl font-semibold">
+  COLLABORATOR
+</h2>
+<div class="text mx-auto flex w-3/4 flex-wrap justify-center gap-2 pt-5 font-roboto-mono text-sm">
+
+<span>ECI.ID BACKEND TEAM</span>
 </div>

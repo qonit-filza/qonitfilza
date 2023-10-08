@@ -5,9 +5,15 @@ image: "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sampl
 description: "Modern attendance web app featuring location access, attendance history, and statistics summary"
 ---
 
+import Stack from "@components/Stack.astro";
+import ExternalLink from "@components/ExternalLink.astro";
+export const stacks = ["VUE", "PINIA", "TAILWIND CSS", "JSON SERVER"];
 
-import ExternalLink from '@components/ExternalLink.astro'
-
-<div class="mt-5 flex justify-end gap-2 not-prose border-b-2 border-black pb-8">
-          <ExternalLink text="Github" link="https://github.com/qonit-filza/ec-attendance" />
+<div class="not-prose gap-2Å mt-5 flex justify-end">
+  <ExternalLink
+    text="Github"
+    link="https://github.com/qonit-filza/ec-attendance"
+  />
 </div>
+
+<Stack techs={stacks} />

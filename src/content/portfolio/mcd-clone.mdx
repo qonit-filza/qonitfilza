@@ -6,7 +6,24 @@ description: "Restaurant company site, app, and CMS integrated with microservice
 ---
 
 import ExternalLink from "@components/ExternalLink.astro";
+import Stack from "@components/Stack.astro";
 
-<div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
+export const stacks = [
+  "REACT",
+  "REACT NATIVE",
+  " EXPO",
+  "TAILWIND CSS",
+  "EXPRESSJS",
+  "POSTGRESQL",
+  "SEQUELIZE",
+  "MONGODB",
+  "APOLLO GRAPHQL",
+  "DOCKER",
+  "REDIS",
+];
+
+<div class="not-prose mt-5 flex justify-end gap-2 ">
   <ExternalLink text="Live Demo" link="https://mcd-customer.web.app/" />
 </div>
+
+<Stack techs={stacks} />
