@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
+import ExternalLink from "@components/ExternalLink.astro";
 
 export async function getStaticPaths() {
   const portfolios = await getCollection("portfolio");
@@ -18,25 +19,30 @@ const { Content } = await portfolio.render();
     transition:name={"container-" + portfolio.slug}
     class="border-4 border-black shadow-retro transition-all"
   >
-    <article class="prose prose-xl mx-auto pt-12">
-      <div class="not-prose">
+    <article class="prose prose-xl mx-auto py-12">
+      <div class="not-prose border-b-2 border-black pb-8">
         <img
           transition:name={"image-" + portfolio.slug}
-          class="aspect-[144/77] w-full border border-slate-600 object-cover transition-all"
+          class="aspect-[144/77] w-full border-2 border-black object-cover transition-all"
           src={portfolio.data.image}
         />
         <h1
-          class="font-ar-one mt-10 text-6xl font-bold transition-all"
+          class="mt-10 font-ar-one text-6xl font-bold transition-all"
           transition:name={"title-" + portfolio.slug}
         >
           {portfolio.data.title}
         </h1>
         <p
-          class="font-roboto-mono mt-5 transition-all"
+          class="text-balance mt-5 font-roboto-mono transition-all"
           transition:name={"description-" + portfolio.slug}
         >
           {portfolio.data.description}
         </p>
+
+        <div class="mt-5 flex justify-end gap-2">
+          <ExternalLink text="Live Demo" link="https://github.com" />
+          <ExternalLink text="Github" link="https://github.com" />
+        </div>
       </div>
 
       <Content />
