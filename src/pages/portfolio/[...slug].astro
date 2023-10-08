@@ -19,20 +19,26 @@ const { Content } = await portfolio.render();
     class="border-4 border-black shadow-retro transition-all"
   >
     <article class="prose prose-xl mx-auto pt-12">
-      <img
-        transition:name={"image-" + portfolio.slug}
-        class="aspect-[144/77] w-full border border-slate-600 object-cover transition-all"
-        src={portfolio.data.image}
-      />
-      <h1 class="transition-all" transition:name={"title-" + portfolio.slug}>
-        {portfolio.data.title}
-      </h1>
-      <p
-        class="transition-all"
-        transition:name={"description-" + portfolio.slug}
-      >
-        {portfolio.data.description}
-      </p>
+      <div class="not-prose">
+        <img
+          transition:name={"image-" + portfolio.slug}
+          class="aspect-[144/77] w-full border border-slate-600 object-cover transition-all"
+          src={portfolio.data.image}
+        />
+        <h1
+          class="font-ar-one mt-10 text-6xl font-bold transition-all"
+          transition:name={"title-" + portfolio.slug}
+        >
+          {portfolio.data.title}
+        </h1>
+        <p
+          class="font-roboto-mono mt-5 transition-all"
+          transition:name={"description-" + portfolio.slug}
+        >
+          {portfolio.data.description}
+        </p>
+      </div>
+
       <Content />
     </article>
   </div>

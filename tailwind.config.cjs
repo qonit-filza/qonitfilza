@@ -6,6 +6,10 @@ module.exports = {
       boxShadow: {
         retro: "5px 5px 0 0 rgba(0,0,0,0.75)",
       },
+      fontFamily: {
+        "ar-one": ['"AR One Sans"', "sans"],
+        "roboto-mono": ['"Roboto Mono"', "roboto"],
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
