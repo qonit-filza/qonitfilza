@@ -12,7 +12,9 @@ const portfolios = data.sort((a, b) => a.data.id - b.data.id);
     <h1 class="text-center font-ar-one text-6xl font-semibold">qonitfilza</h1>
     <h2 class="text-center font-ar-one text-2xl font-normal">work-sample</h2>
 
-    <section class="grid grid-cols-3 gap-5 pt-20">
+    <section
+      class="grid grid-cols-1 gap-5 pl-2 pr-6 pt-20 md:grid-cols-3 md:px-0"
+    >
       {
         portfolios.map((portfolio) => (
           <Card slug={portfolio.slug} {...portfolio.data} />

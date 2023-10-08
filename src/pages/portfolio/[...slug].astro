@@ -13,12 +13,12 @@ const portfolio = Astro.props;
 const { Content } = await portfolio.render();
 ---
 
-<div class="bg-white p-14">
+<div class="bg-white px-5 py-6 md:p-14">
   <div
     transition:name={"container-" + portfolio.slug}
-    class="border-4 border-black shadow-retro transition-all"
+    class="transition-all md:border-4 md:border-black md:shadow-retro"
   >
-    <article class="prose prose-xl mx-auto py-12">
+    <article class="prose prose-xl mx-auto py-1 md:py-12">
       <div class="not-prose">
         <img
           transition:name={"image-" + portfolio.slug}
@@ -26,13 +26,13 @@ const { Content } = await portfolio.render();
           src={portfolio.data.image}
         />
         <h1
-          class="mt-10 font-ar-one text-6xl font-bold transition-all"
+          class="mt-10 font-ar-one text-3xl font-bold transition-all md:text-6xl"
           transition:name={"title-" + portfolio.slug}
         >
           {portfolio.data.title}
         </h1>
         <p
-          class="text-balance mt-5 font-roboto-mono transition-all"
+          class="text-balance mt-5 font-roboto-mono text-sm transition-all md:text-xl"
           transition:name={"description-" + portfolio.slug}
         >
           {portfolio.data.description}
