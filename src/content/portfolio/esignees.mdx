@@ -1,17 +1,51 @@
 ---
-layout: '@layouts/Layout.astro'
-title: 'esignees'
-image: 'https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sample/esignees.png'
+layout: "@layouts/Layout.astro"
+title: "esignees"
+image: "https://res.cloudinary.com/dsc0j8hhj/image/upload/v1696513639/work-sample/esignees.png"
 description: "End-to-end platform to sign, request, and verify document's signature with asymmetric encryption"
 ---
 
-<div class="grid grid-cols-2 gap-10 not-prose mt-12">
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/add-edit-signature.jpeg" />
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/append-signature.jpeg" />
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/contact.jpeg" />
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/document-and-message-detail.jpeg" />
-    <img class=" mx-auto border border-black mb-0 h-full object-contain" src="/img/esignees/document-verification.jpeg" />
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/inbox.jpeg" />
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/package.jpeg" />
-    <img class=" mx-auto border border-black mb-0" src="/img/esignees/payment.jpeg" />
+import ExternalLink from "@components/ExternalLink.astro";
+
+<div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
+  <ExternalLink text="Live Demo" link="https://esignees.web.app/" />
+  <ExternalLink
+    text="Github"
+    link="https://github.com/qonit-filza?tab=repositories&q=esignees&type=&language=&sort="
+  />
+</div>
+
+<div class="not-prose mt-12 grid grid-cols-2 gap-10">
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/add-edit-signature.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/append-signature.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/contact.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/document-and-message-detail.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 h-full border border-black object-contain"
+    src="/img/esignees/document-verification.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/inbox.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/package.jpeg"
+  />
+  <img
+    class=" mx-auto mb-0 border border-black"
+    src="/img/esignees/payment.jpeg"
+  />
 </div>
