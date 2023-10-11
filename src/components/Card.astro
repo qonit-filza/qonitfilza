@@ -9,14 +9,10 @@ interface Props {
 const { title, description, image, slug } = Astro.props;
 ---
 
-<a
-  transition:name={"container-" + slug}
-  href={`/portfolio/${slug}`}
-  class="shadow-ctc group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col border border-black bg-white p-4 transition-all hover:-translate-x-1 hover:-translate-y-1 hover:border-4 hover:border-black hover:shadow-retro"
->
+<div class="flex-col p-4">
   <img
     transition:name={"image-" + slug}
-    class="aspect-[144/77] border object-cover grayscale transition-all group-hover:border-black group-hover:grayscale-0"
+    class="aspect-[144/77] w-full border object-cover grayscale transition-all group-hover:border-black group-hover:grayscale-0"
     src={image}
   />
 
@@ -34,30 +30,10 @@ const { title, description, image, slug } = Astro.props;
       {description}
     </p>
   </div>
-</a>
+</div>
 
-<style>
-  .shadow-cta {
-    -webkit-transition:
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    -o-transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-  }
-
-  .shadow-ctb {
+<style is:global>
+  .shadow-transition {
     -webkit-transition:
       -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
       -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
@@ -76,55 +52,36 @@ const { title, description, image, slug } = Astro.props;
       -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
       -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
     transition-delay: 0s;
-  }
-
-  .shadow-ctb:hover {
-    transition-delay: 400ms;
-  }
-
-  .shadow-ctc {
-    -webkit-transition:
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    -o-transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition-delay: 0s;
-  }
-
-  .shadow-ctd {
-    -webkit-transition:
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    -o-transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition:
-      transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-transform 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7),
-      -webkit-box-shadow 0.3s cubic-bezier(0.5, 2.5, 0.7, 0.7);
-    transition-delay: 0s;
-  }
-
-  .shadow-ctd:hover {
-    transition-delay: 200ms;
   }
 </style>
+
+<!-- <script>
+  const cards = document.querySelectorAll(".porto-card");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const children = entry.target.children;
+
+          Array.from(children).forEach((child) => {
+            if (child.classList.contains("horizontal")) {
+              child.classList.add("w-full");
+            } else if (child.classList.contains("vertical")) {
+              child.classList.add("h-full");
+            }
+          });
+
+          // observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 1,
+    },
+  );
+
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
+</script> -->

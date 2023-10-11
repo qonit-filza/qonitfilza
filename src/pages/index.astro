@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Card from "@components/Card.astro";
+import CardContainer from "@components/CardContainer";
 
 const data = await getCollection("portfolio");
 const portfolios = data.sort((a, b) => a.data.id - b.data.id);
@@ -17,7 +18,9 @@ const portfolios = data.sort((a, b) => a.data.id - b.data.id);
     >
       {
         portfolios.map((portfolio) => (
-          <Card slug={portfolio.slug} {...portfolio.data} />
+          <CardContainer slug={portfolio.slug} client:load>
+            <Card slug={portfolio.slug} {...portfolio.data} />
+          </CardContainer>
         ))
       }
     </section>
