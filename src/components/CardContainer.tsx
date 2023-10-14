@@ -10,21 +10,25 @@ export default function CardContainer({
   const card = useRef(null);
 
   useEffect(() => {
+    const viewportWidth = window.innerWidth;
     const observer = new IntersectionObserver(
-      (entries, observer) => {
+      (entries) => {
         entries.forEach((entry) => {
+          const classes = [
+            "-translate-x-1",
+            "-translate-y-1",
+            "border-4",
+            "shadow-retro",
+          ];
+          const image = entry.target.querySelector(".card-image");
+          const imageClasses = ["border-black", "grayscale-0"];
+
           if (entry.isIntersecting) {
-            const children = entry.target.children;
-
-            Array.from(children).forEach((child) => {
-              if (child.classList.contains("horizontal")) {
-                child.classList.add("w-full");
-              } else if (child.classList.contains("vertical")) {
-                child.classList.add("h-full");
-              }
-            });
-
-            observer.unobserve(entry.target);
+            entry.target.classList.add(...classes);
+            image?.classList.add(...imageClasses);
+          } else {
+            entry.target.classList.remove(...classes);
+            image?.classList.remove(...imageClasses);
           }
         });
       },
@@ -33,10 +37,10 @@ export default function CardContainer({
       },
     );
 
-    if (card.current) observer.observe(card.current);
+    if (card.current && viewportWidth < 768) observer.observe(card.current);
 
     return () => {
-      if (card.current) observer.unobserve(card.current);
+      if (card.current && viewportWidth < 768) observer.unobserve(card.current);
     };
   }, []);
 
@@ -44,13 +48,9 @@ export default function CardContainer({
     <a
       ref={card}
       href={`/portfolio/${slug}`}
-      className="porto-card shadow-transition group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col bg-white transition-all hover:-translate-x-1 hover:-translate-y-1 hover:shadow-retro"
+      className="porto-card shadow-transition group relative ml-2 inline-flex h-auto w-full translate-x-0 translate-y-0 flex-col border border-black bg-white transition-all md:hover:-translate-x-1 md:hover:-translate-y-1 md:hover:border-4 md:hover:shadow-retro"
       style={{ viewTransitionName: "container-" + slug }}
     >
-      <div className="horizontal card-border absolute z-10 h-0.5 w-0 bg-gray-300 transition-[width] delay-0 duration-200 group-hover:bg-black"></div>
-      <div className="vertical card-border absolute right-0 top-0 z-10 h-0 w-0.5 bg-gray-300 transition-[height] delay-200 duration-200 group-hover:bg-black"></div>
-      <div className="horizontal card-border absolute bottom-0 right-0 z-10 h-0.5 w-0 bg-gray-300 transition-[width] delay-[400ms] duration-200 group-hover:bg-black"></div>
-      <div className="vertical card-border absolute bottom-0 z-10 h-0 w-0.5 bg-gray-300 transition-[height] delay-[600ms] duration-200 group-hover:bg-black"></div>
       {children}
     </a>
   );
