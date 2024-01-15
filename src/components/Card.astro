@@ -14,6 +14,7 @@ const { title, description, image, slug } = Astro.props;
     transition:name={"image-" + slug}
     class="card-image aspect-[144/77] w-full border object-cover grayscale transition-all md:group-hover:border-black md:group-hover:grayscale-0"
     src={image}
+    alt={title}
   />
 
   <div class="py-4">

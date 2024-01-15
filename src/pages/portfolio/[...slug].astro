@@ -20,10 +20,15 @@ const { Content } = await portfolio.render();
   >
     <article class="prose prose-xl mx-auto py-1 md:py-12">
       <div class="not-prose">
+        <p class="mb-5 font-ar-one text-xl">
+          <a href="/" class="font-bold underline underline-offset-4">home</a>
+          <span>/portfolio/{portfolio.slug}</span>
+        </p>
         <img
           transition:name={"image-" + portfolio.slug}
           class="aspect-[144/77] w-full border-2 border-black object-cover transition-all"
           src={portfolio.data.image}
+          alt={portfolio.data.title}
         />
         <h1
           class="mt-10 font-ar-one text-3xl font-bold transition-all md:text-6xl"
@@ -32,7 +37,7 @@ const { Content } = await portfolio.render();
           {portfolio.data.title}
         </h1>
         <p
-          class="text-balance mt-5 font-roboto-mono text-sm transition-all md:text-xl"
+          class="mt-5 font-roboto-mono text-sm transition-all text-balance md:text-xl"
           transition:name={"description-" + portfolio.slug}
         >
           {portfolio.data.description}
