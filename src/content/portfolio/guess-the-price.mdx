@@ -1,0 +1,28 @@
+---
+id: 8
+layout: "@layouts/Layout.astro"
+title: "Guess The Price"
+image: "/quiz-tebak.png"
+description: "Simple webapp for marketing promotional event. Exploring the dynamics of interactive animation"
+---
+
+import Stack from "@components/Stack.astro";
+export const stacks = [
+  "REACT",
+  "VITE",
+  "REACT ROUTER",
+  "TAILWIND CSS",
+  "FRAMER MOTION",
+];
+
+<div class="not-prose mt-5 flex justify-end gap-2 border-b-2 border-black pb-8">
+  {/*  */}
+</div>
+
+<img
+  class="w-full border-2 border-black"
+  src="/quiz-tebak.gif"
+  alt="program quiz tebak"
+/>
+
+<Stack techs={stacks} />
